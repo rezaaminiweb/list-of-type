@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="fontello-cf81e7a5/css/fontello.css">
+</head>
+<body class="bg-gradient-to-l from-black to-[#909d6c]">
+    <div class="w-[100%]  container mx-auto flex min-h-screen justify-center items-center">
+       <div class="listimg  w-[100%] h-1/2 flex justify-center flex-wrap">
+        <h1 class="text-4xl  font-black uppercase  my-5 mx-5 text-white"> list of type</h1>
+        <div class="inputicon h-28  w-full text-center">
+            <i class=" icon-edit-2 text-white text-4xl text-center cursor-pointer"></i>
+            <input type="text" id="inputUser" class="font-fasfag border-b-4 border-b-white outline-none text-white  w-[50%] px-3 py-2 text-2xl bg-[#35323500]">
+        </div>
+        <div id="addItems" class="block" >
+            
+        </div>
+       </div>
+    </div>
+    <script>
+        let icon = document.getElementsByTagName('i')[0]
+        let inputUser=document.getElementsByTagName('input')[0]
+        let addItemss = document.getElementById('addItems')
+        // console.log(addItemss);
+            inputUser.addEventListener('keydown',function(s){
+                if(s.key=='Enter'){
+                    inputUserVal= inputUser.value
+                    let h2 = document.createElement('h2')
+                    h2.innerHTML= ' - '+inputUserVal
+                    addItemss.insertAdjacentElement('beforeend',h2)
+                    addItemss.style.width="100%"
+                    addItemss.style.display='block'
+                    // addItemss.style.flexDirection='column'
+                    h2.style.fontSize='45px'
+                    // h2.style.border='2px solid red'
+                    h2.style.textAlign='start'
+                    // h2.style.display='inline-block'
+                    h2.style.color='white'
+                    h2.style.fontFamily='fasfag'
+                    // h2.style.cursor='pointer'
+                    h2.addEventListener('click',()=>{
+                        
+                        h2.style.textDecoration='line-through';
+                        h2.style.textDecorationColor='#356488'
+                            })
+                    inputUser.value=null
+                }
+
+            })
+            
+            icon.addEventListener('click',()=>{
+                addItemss.innerHTML=""
+            })
+    </script>
+</body>
+</html>
